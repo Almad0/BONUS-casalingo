@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+  <title>TodoList</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+  <div id="root">
+    <div class="container">
+
+      <div class="inputActions">
+        <input type="text" name="" value="" v-model="newTask" @keyup.enter="addTask">
+      </div>
+      <button type="button" name="button" @click="addTask">Aggiungi una taglia<img id="logo" src="./assets/img/logo.png" alt=""></button>
+      <h2>Lista delle Taglie Imperiali <span>&#8482;</span></h2>
+      <ul v-if="isData">
+        <li class="list" v-for="(task, index) in list"> {{task}} <i class="fab fa-galactic-republic" @click="removeTask(index)"></i> </li>
+      </ul>
+      <p v-else>- Lista Vuota -</p>
+
+      <audio id="audio" controls>
+        <source src="./assets/music/mandalorian_synth.mp3" type="audio/mp3">
+      </audio>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
